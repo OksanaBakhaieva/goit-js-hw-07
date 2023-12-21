@@ -22,14 +22,13 @@ destroyBtn.addEventListener(`click`, () => {
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
     const newBoxes = [];
-    let width = 30;
-    let height = 30;
+    let size = 30;
+    
     for (let i = 0; i < amount; i += 1) {
       const color = getRandomHexColor();
-      const newBox = `<div style="width: ${width}px; height: ${height}px; background-color: ${color};"></div>`;
+      const newBox = `<div style="width: ${size}px; height: ${size}px; background-color: ${color};"></div>`;
       newBoxes.push(newBox);
-      width += 10;
-      height += 10;
+      size += 10;
     }
     boxes.innerHTML = newBoxes.join('');
     input.value = '';
@@ -37,5 +36,5 @@ function createBoxes(amount) {
 };
 
 function destroyBoxes() {
-  return (boxes.innerHTML = '');
+  boxes.innerHTML = '';
 };
